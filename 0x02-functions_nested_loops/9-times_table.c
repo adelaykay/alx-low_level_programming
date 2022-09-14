@@ -22,11 +22,11 @@ void times_table(void)
 			res = num1[i] * num2[j];
 			first = res / 10;
 			last = res % 10;
-			if (b != 0)
+			if (j != 0)
 			{
 				_putchar(',');
 				_putchar(' ');
-				if (result < 10)
+				if (res < 10)
 				{
 					_putchar(' ');
 				}
