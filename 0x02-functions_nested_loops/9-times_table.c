@@ -8,9 +8,8 @@
 
 void times_table(void)
 {
-	int num1[10] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
-	int num2[10] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
-	int i, j;
+	int i;
+	int j;
 	int res;
 	int first;
 	int last;
@@ -19,28 +18,23 @@ void times_table(void)
 	{
 		for (j = 0; j < 10; j++)
 		{
-			res = num1[i] * num2[j];
+			res = i * j;
 			first = res / 10;
 			last = res % 10;
-			if (j != 0)
+			if (first > 0)
+			{
+				_putchar(first);
+			}
+			_putchar(last);
+			if (j != 9)
 			{
 				_putchar(',');
 				_putchar(' ');
-				if (res < 10)
-				{
-					_putchar(' ');
-				}
-			}
-			if (res < 10)
-			{
-				_putchar('0' + res);
 			}
 			else
 			{
-			_putchar('0' + first);
-			_putchar('0' + last);
+				_putchar('\n');
 			}
 		}
-		_putchar('\n');
 	}
 }
