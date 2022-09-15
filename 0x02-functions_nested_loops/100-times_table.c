@@ -12,21 +12,24 @@ void print_times_table(int n)
 		int i;
 		int j;
 		int res;
-		int first;
-		int last;
 
 		for (i = 0; i <= n; i++)
 		{
 			for (j = 0; j <= n; j++)
 			{
 				res = i * j;
-				first = res / 10;
-				last = res % 10;
-				if (first > 0)
+				if (res >= 10)
 				{
+					int first = res / 10;
+					int last = res % 10;
+
 					_putchar(first);
+					_putchar(last);
 				}
-				_putchar(last);
+				else
+				{
+					_putchar(res);
+				}
 				if (j != n)
 				{
 					_putchar(',');
