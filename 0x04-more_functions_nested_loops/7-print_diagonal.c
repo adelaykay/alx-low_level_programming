@@ -4,7 +4,6 @@
  * print_diagonal - draws a diagonal line on the terminal
  * @n: number of times '\' should be printed
  *
- * Return: 0 Always
  */
 
 void print_diagonal(int n)
@@ -27,5 +26,4 @@ void print_diagonal(int n)
 	{
 		_putchar('\n');
 	}
-	return (0);
 }
