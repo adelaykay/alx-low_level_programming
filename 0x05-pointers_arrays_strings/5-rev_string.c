@@ -18,7 +18,7 @@ void rev_string(char *s)
 		{
 			first = s;
 			last = s;
-			for (c = 0; c < length - 1; c++)
+			for (c = 0; c < length; c++)
 			{
 				last++;
 			}
@@ -31,6 +31,7 @@ void rev_string(char *s)
 				first++;
 				last--;
 			}
+			break;
 		}
 	}
 }
