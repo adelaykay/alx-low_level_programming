@@ -11,7 +11,7 @@ int main(void)
 	long int i, j;
 
 	i = 612852475143;
-	for (j = 2; j <= n; j++)
+	for (j = 2; j <= i; j++)
 	{
 		if (i % j == 0)
 		{
