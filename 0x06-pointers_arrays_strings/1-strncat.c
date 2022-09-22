@@ -11,6 +11,10 @@
 char *_strncat(char *dest, char *src, int n)
 {
 	int i;
+	int lensrc = 0;
+
+	while (dest[lensrc] != '\0')
+		lensrc++;
 
 	for (i = 0; ; i++)
 	{
@@ -22,6 +26,8 @@ char *_strncat(char *dest, char *src, int n)
 			{
 				dest[i++] = src[j++];
 			}
+			if (lensrc < n)
+				dest[i] = '\0';
 			break;
 		}
 	}
