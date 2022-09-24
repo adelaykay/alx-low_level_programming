@@ -9,22 +9,22 @@
 
 char *leet(char *str)
 {
-	int i;
+	int i, j = 0;
 	int lt[] = {52, 51, 48, 55, 49};
 	int lc[] = {97, 101, 111, 116, 108};
 	int uc[] = {65, 69, 79, 84, 76};
 
-	while (*str != '\0')
+	while (*(str + j) != '\0')
 	{
 		for (i = 0; i < 5; i++)
 		{
-			if (*str == lc[i] || *str == uc[i])
+			if (*(str + j) == lc[i] || *(str + j) == uc[i])
 			{
-				*str = lt[i];
+				*(str + j) = lt[i];
 				break;
 			}
 		}
-		str++;
+		j++;
 	}
 	return (str);
 }
