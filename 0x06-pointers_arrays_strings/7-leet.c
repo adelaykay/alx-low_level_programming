@@ -19,7 +19,10 @@ char *leet(char *str)
 		for (i = 0; i < 5; i++)
 		{
 			if (*str == lc[i] || *str == uc[i])
+			{
 				*str = lt[i];
+				break;
+			}
 		}
 		str++;
 	}
