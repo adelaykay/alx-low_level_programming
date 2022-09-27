@@ -2,10 +2,10 @@
 
 /**
  * swap_int - swaps the values of two integers
- * @a: first integer to be swapped
- * @b: second integer
+ * @a: a pointer to an integer
+ * @b: a pointer to an integer
  *
- * Return: Nothiing
+ * Return: nothing
  */
 
 void swap_int(int *a, int *b)
