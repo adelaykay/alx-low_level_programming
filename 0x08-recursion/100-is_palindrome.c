@@ -1,6 +1,22 @@
 #include "main.h"
 
 /**
+ * _strlen - determines the length of a string
+ * @s: the string
+ *
+ * Return: the length of the string
+ */
+
+int _strlen(char *s)
+{
+	int length = 0;
+
+	while (*(s + length))
+		length++;
+	return (length);
+}
+
+/**
  * check_pal - checks recursively for a palindrome
  * @s: string in question
  * @strlen: length of string in question
@@ -10,7 +26,6 @@
 
 int check_pal(char *s, int strlen, int iter)
 {
-/*	printf("strlen: %d, iter: %d, char1: %c, char2: %c\n", strlen, iter, *s, *(s + iter)); */
 	if (iter < 1)
 		return (1);
 	else if (*(s) != *(s + iter))
@@ -28,11 +43,9 @@ int check_pal(char *s, int strlen, int iter)
 
 int is_palindrome(char *s)
 {
-	int iter, strlen = 0;
+	int strlen = _strlen(s);
+	int iter = strlen - 1;
 
-	while (*(s + strlen))
-		strlen++;
-	iter = strlen - 1;
 	if (strlen <= 1)
 		return (1);
 	else
