@@ -28,17 +28,20 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	}
 	len = n >= j ? (i + j + 1) : (i + n + 1);
 
-	ptr = malloc(j);
+	ptr = malloc(len);
 
 	if (ptr != NULL)
 	{
 		for (i = 0; *(s1 + i); i++)
 		{
-			ptr[i] = s1[i];
+			*(ptr + i) = *(s1 + i);
+			printf("%d, %c ", i, *(ptr + i));
 		}
-		for (j = 0 ; i < len; j++, i++)
+		for ( ; i < len; i++)
 		{
-			ptr[i] = s2[j];
+			ptr[i] = *s2;
+			s2++;
+			printf("%d, %c ", i, ptr[i]);
 		}
 		ptr[i] = '\0';
 		return (ptr);
