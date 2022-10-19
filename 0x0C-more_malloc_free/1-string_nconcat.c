@@ -1,5 +1,23 @@
 #include "main.h"
+#include <stdio.h>
+#include <stdlib.h>
 
+/**
+ * _strlen - returns the length of a string
+ * @s: string to measure
+ *
+ * Return: length of string in question
+ */
+
+int _strlen(char *s)
+{
+	if (*s)
+	{
+		return (1 + _strlen(s + 1));
+	}
+	else
+		return (0);
+}
 /**
  * string_nconcat - concatenates two strings
  * @s1: string one
@@ -13,38 +31,29 @@
 
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-	unsigned int i = 0, j = 0, len;
-	char *ptr;
+	char *str;
+	unsigned int i = 0, j, len_s1, len_s2, len_str;
 
-	if (s1)
-	{
-		while (*(s1 + i))
-			i++;
-	}
-	if (s2)
-	{
-		while (*(s2 + j))
-			j++;
-	}
-	len = n >= j ? (i + j + 1) : (i + n + 1);
+	if (!s1)
+		s1 = "";
+	if (!s2)
+		s2 = "";
 
-	ptr = malloc(len);
+	len_s1 = _strlen(s1);
+	len_s2 = _strlen(s2);
+	len_str = (n >= len_s2) ? (len_s1 + len_s2) : (len_s1 + n);
 
-	if (ptr != NULL)
+	str = malloc(len_str * sizeof(str) + 1);
+	if (str == NULL)
+		return (NULL);
+
+	for ( ; i < len_s1; i++)
 	{
-		for (i = 0; *(s1 + i); i++)
-		{
-			*(ptr + i) = *(s1 + i);
-			printf("%d, %c ", i, *(ptr + i));
-		}
-		for ( ; i < len; i++)
-		{
-			ptr[i] = *s2;
-			s2++;
-			printf("%d, %c ", i, ptr[i]);
-		}
-		ptr[i] = '\0';
-		return (ptr);
+		str[i] = s1[i];
 	}
-	return (NULL);
+	for (j = 0; i < len_str; j++, i++)
+	{
+		str[i] = s2[j];
+	}
+	return (str);
 }
