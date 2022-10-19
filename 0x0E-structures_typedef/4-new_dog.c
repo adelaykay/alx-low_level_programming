@@ -1,7 +1,7 @@
 #include "dog.h"
 
 /**
- * _strlen_recursion - returns the length of a string
+ * _strlen - returns the length of a string
  * @s: string to measure
  *
  * Return: length of string in question
